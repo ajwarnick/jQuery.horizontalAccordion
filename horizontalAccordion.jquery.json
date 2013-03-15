@@ -1,0 +1,35 @@
+{
+    "name": "horizontalAccordion",
+    "title": "jQuery Horizontal Accordion",
+    "description": "jQuery plugin for responsive horizontal accordion.",
+    "keywords": [
+        "accordion",
+        "horizontal",
+        "responsive"
+    ],
+    "version": "0.1.0",
+    "author": {
+        "name": "Anthony Warnick",
+        "url": "https://github.com/ajwarnick"
+    },
+    "maintainers": [
+        {
+            "name": "Anthony Warnick",
+            "email": "junkwarnick@gmail.com",
+            "url": "http://anthonywarnick.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/ajwarnick/jQuery.horizontalAccordion/blob/master/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/ajwarnick/jQuery.horizontalAccordion/issues",
+    "homepage": "https://github.com/ajwarnick/jQuery.horizontalAccordion",
+    "docs": "https://github.com/ajwarnick/jQuery.horizontalAccordion/blob/master/README.md",
+    "download": "https://github.com/ajwarnick/jQuery.horizontalAccordion/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
