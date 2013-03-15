@@ -10,33 +10,25 @@ you make it by calling it on what ever you want that has the for of
     <div class='section_links'>
     
       <div class='section'>
-        <div class='headers introduction'>
-          <span>introduction</span>
+        <div class='headers'>
+          <span><!-- your title here --></span>
         </div>
-        <div class='section_container fixed'>
-          <h4>
-            introduction
-          </h4>
-          <div>
-            <img class='fixie' height='900' width='1200'>
-          </div>
+        <div class='section_container'>
+          <!-- what ever you want here -->
         </div>
+      </div>    
+
+      <div class='section'>
+        <div class='headers'>
+          <span><!-- your title here --></span>
+        </div>
+        <div class='section_container'>
+          <!-- what ever you want here -->
+        </div>
+      </div>            
         
-        <div class='section'>
-          <div class='headers introduction'>
-            <span>introduction</span>
-          </div>
-          <div class='section_container fixed'>
-            <h4>
-              introduction
-            </h4>
-            <div>
-              <img class='fixie' height='900' width='1200'>
-            </div>
-          </div>
-          
-          <!-- you can have as many sections as you want -->
-      </div>
+    <!-- you can have as many sections as you want -->
+    </div>
 
 __Public Methods__
 
