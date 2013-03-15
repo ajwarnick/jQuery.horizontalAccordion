@@ -11,6 +11,10 @@
   var settings = {};
   var defaults = {
     DEBUG: false,
+    click: true,
+    resize: true,
+    key: true,
+    
     defaultOptionA: 'defaultValue',
     speed: 1000
   }
@@ -34,46 +38,25 @@
        });
        $EL.children(".section").first().addClass("active");
        $EL.find(".active").css("width", methods._hz_outerWidth());
-      
-      
-       $EL.on("click", ".section", function(event) {
-         event.preventDefault();
-         if (!$(this).hasClass("active")) {
-           $(this).parent().children(".section").each(function(index, value) {
-             if ($(this).is(".active")) {
-               $(this).addClass("closing");
-             }
-           });
-           $(this).addClass("opening active");
-           methods._animateMethod();
-         }
-       });
-      
-       $(document).keydown(function(e) {
-         if (e.keyCode === 37) {
-           methods._next_slide();
-         } else if (e.keyCode === 38) {
-           methods._slide(0);
-         } else if (e.keyCode === 39) {
-           methods._prev_slide();
-         } else if (e.keyCode === 40) {
-           methods._slide(total_pages);
-         }
-       });
-      
-       $(window).resize(function() {
-         $EL.css("width", "110%");
-         methods._setWindowSize();
-         methods._simpleMethod();
-       });
        
-
-
+       if( settings.click ){
+         console.log(settings.click);
+         methods._click_init();
+       };
+      
+      if( settings.key ){
+        methods._key_press();
+      };
+      if( settings.resize ){
+        methods._resize();
+      };
        return this.each(function(){
          $(window).bind('reset.horizontalAccordion', methods.reset);
        });
 
      },
+     
+     /** #### PUBLIC METHODS #### */
      destroy : function( ) {
 
        return this.each(function(){
@@ -84,15 +67,11 @@
      reset : function( ) { 
        // ... 
      },
-     
-     
-     /** #### PUBLIC METHODS #### */
      publicMethod : function ()
      {
          console.log('inside publicMethod!');
          return $EL;        // support jQuery chaining
      },
-     
      hide : function( ) {
        // ... 
      },
@@ -119,6 +98,43 @@
      {
        console.log($myEL);
      },
+     
+     _key_press : function(){
+       $(document).keydown(function(e) {
+         if (e.keyCode === 37) {
+           methods._next_slide();
+         } else if (e.keyCode === 38) {
+           methods._slide(0);
+         } else if (e.keyCode === 39) {
+           methods._prev_slide();
+         } else if (e.keyCode === 40) {
+           methods._slide(total_pages);
+         }
+       });
+     },
+     
+     _resize : function(){
+       $(window).resize(function() {
+         $EL.css("width", "110%");
+         methods._setWindowSize();
+         methods._simpleMethod();
+       });
+     },
+     
+     _click_init : function(){
+       $EL.on("click", ".section", function(event) {
+         event.preventDefault();
+         if (!$(this).hasClass("active")) {
+           $(this).parent().children(".section").each(function(index, value) {
+             if ($(this).is(".active")) {
+               $(this).addClass("closing");
+             }
+           });
+           $(this).addClass("opening active");
+           methods._animateMethod();
+         }
+       });
+     }
     
     
      _simpleMethod : function() {
