@@ -134,7 +134,7 @@
            methods._animateMethod();
          }
        });
-     }
+     },
     
     
      _simpleMethod : function() {
